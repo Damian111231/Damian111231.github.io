@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>儿子生日快乐</title>
+	<style>
+	*{
+		margin: 0;padding: 0;
+	}
+	body{
+		color: blue;
+		background:pink;
+		font-weight: bold;
+		font-style: '宋体';
+	}
+	.pic{
+		width: 800px;
+	/* 	height: 600px; */
+		margin: 0 auto;
+		/* border: 1px solid blue; */
+		position: relative;
+	}
+	img{
+		width: 800px;
+		display: none;
+	}
+	img:first-child{
+		display: block;
+		
+	}
+	.btns{
+		height: 22px;
+		/* width: 100%; */
+		/* border: 1px solid green; */
+		position: absolute;
+		top:480px;
+		left: 50%;
+		margin-left: -95px;
+
+	}
+	span{
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		margin-left: 5px;
+		/* border: 1px solid blue; */
+		border-radius: 10px;
+		background: green;
+	}
+	.bg{
+		background: skyblue;
+	}
+	.mp3{
+		/* border: 1px solid red; */
+		background: lightgreen;
+		width: 300px;
+	/* 	margin: 0 auto; */
+		border-radius: 10px;
+		float: left;
+		margin-left: 366px;
+	}
+	.srkl{
+		background: lightgreen;
+		width: 300px;
+		border-radius: 10px;
+		float: right;
+		margin-right: 366px;
+	}
+	</style>
+	<script src="jq/jquery-1.9.1.min.js"></script>
+	<script>
+	$(function(){
+		var  sidx=0;
+		$('span').click(function(event) {
+			 sidx=$(this).index();
+			console.log(sidx);
+			$('span').removeClass('bg');
+			$(this).addClass('bg');
+			$('img').css('display','none')
+			$('img').eq(sidx).css('display','block');
+		});
+		function zdxh(){
+			if(sidx<$('span').length-1){
+				sidx++;}else{
+					sidx=0;
+				}
+			$('span').removeClass('bg');
+			$('span').eq(sidx).addClass('bg');
+			$('img').css('display','none')
+			$('img').eq(sidx).css('display','block');
+			
+		
+		}
+		t=setInterval(zdxh, 3600);
+	})
+	
+	
+			
+				
+		
+
+
+
+
+	</script>
+</head>
+<body>
+	<div class="pic">
+		
+		<img src="imgs/psb (1).jpg"  alt="">
+		<img src="imgs/psb (2).jpg"  alt="">
+		<img src="imgs/psb (3).jpg"  alt="">
+		<img src="imgs/psb (4).jpg"  alt="">
+		<img src="imgs/psb (5).jpg"  alt="">
+		<img src="imgs/psb.jpg"  alt="">
+		
+		
+		<div class="btns">
+		<span class='bg'></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		
+		</div>
+	</div>
+	<div class="mp3">
+		<p align="center">爸爸我们去哪儿</p>
+		<audio src="imgs/林志颖,郭涛,KIMI - 爸爸去哪儿.mp3" controls autoplay>
+			
+		</audio>
+	</div>
+	<div class="srkl">
+		<p align="center">儿子,生日快乐!!!</p>
+		<audio src="imgs/儿童合唱团 - 生日快乐.mp3" controls autoplay>
+			
+		</audio>
+	</div>
+	
+</body>
+</html>
